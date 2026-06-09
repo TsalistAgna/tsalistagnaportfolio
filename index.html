@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsalist Agna | Portfolio</title>
+    <!-- Google Fonts: Plus Jakarta Sans for that geometric, modern Framer look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            /* Brand Colors based on the screenshot inspiration */
+            --primary: #FF6B00; /* The Orange from Nav/CTA */
+            --secondary: #8B5CF6; /* The Purple from background blob */
+            --bg-body: #FFFFFF;
+            --bg-card: #F8F8F8;
+            --bg-card-dark: #111111;
+            --text-main: #111111;
+            --text-light: #666666;
+            --text-on-dark: #FFFFFF;
+            --border: #E5E5E5;
+            
+            /* Spacing */
+            --container-width: 1100px;
+            --header-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            padding: 80px 0 100px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Floating 3D Shapes */
+        .shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Shape Styles */
+        .shape-sphere {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500);
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+            top: 20%;
+            left: 10%;
+        }
+
+        .shape-cube {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff00cc, #333399);
+            border-radius: 8px;
+            top: 25%;
+            right: 15%;
+            animation-delay: 1s;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .shape-star {
+            font-size: 40px;
+            color: var(--secondary);
+            top: 60%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .shape-cylinder {
+            width: 40px;
+            height: 70px;
+            background: linear-gradient(90deg, #4ade80, #22c55e);
+            border-radius: 20px;
+            bottom: 20%;
+            right: 20%;
+            animation-delay: 1.5s;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Hero Background Blob (Purple) */
+        .hero-bg-blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            width: 350px;
+            height: 350px;
+            background: var(--secondary);
+            filter: blur(80px);
+            opacity: 0.2;
+            z-index: -2;
+            border-radius: 50%;
+        }
+
+        .hero-content h2 {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Person Image Cutout Style */
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 40px; /* Rounded rectangle like the screenshot */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            background: #f0f0f0;
+        }
+
+        .cta-button {
+            background-color: #111;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, background-color 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: var(--primary);
+        }
+
+        /* Social Proof / Clients */
+        .clients-row {
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .avatars {
+            display: flex;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -10px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        .avatar:first-child { margin-left: 0; }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+        .clients-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* --- MY STACK (Inspired by Screenshot 3) --- */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .stack-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .stack-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .stack-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .stack-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .stack-hint {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 10px;
+            opacity: 0.6;
+        }
+
+        /* --- PROJECTS (Inspired by Screenshot 2) --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .project-card {
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
+        /* Light Card Style */
+        .card-light {
+            background-color: #fff;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+        
+        /* Dark Card Style */
+        .card-dark {
+            background-color: var(--bg-card-dark);
+            color: var(--text-on-dark);
+        }
+
+        .project-label {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+            max-width: 90%;
+        }
+
+        .project-meta {
+            margin-top: auto;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- SERVICES / WAY OF WORK --- */
+        .services-container {
+            background: #FAFAFA;
+            border-radius: 30px;
+            padding: 60px;
+        }
+
+        .service-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .service-row:last-child { border-bottom: none; }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .service-desc {
+            color: var(--text-light);
+            max-width: 400px;
+        }
+        
+        .service-arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Social Links Styling */
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px; /* INCREASED: More space between icons */
+        }
+
+        .social-icon {
+            color: #666666;
+            font-size: 2.5rem; /* INCREASED: Bigger icons (was 1.75rem) */
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icon:hover {
+            color: var(--primary); 
+            transform: translateY(-5px); /* Slightly higher lift since they are bigger */
+        }
+
+        /* --- FOOTER / MADE IN --- */
+        .made-in {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+            background: rgba(255,255,255,0.8);
+            padding: 5px 10px;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hide links for simplicity on mobile in this demo */
+            .projects-grid { grid-template-columns: 1fr; }
+            .service-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .hero-image { width: 200px; height: 200px; }
+            .shape { display: none; } /* Simplify on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="container">
+        <div class="nav-logo">Nana<span style="color:var(--primary)">.</span></div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <!-- <a href="#about">About</a> -->
+            <a href="#stack">Stack</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <!-- Decorative Shapes -->
+        <div class="hero-bg-blob"></div>
+        <div class="shape shape-sphere"></div>
+        <div class="shape shape-cube"></div>
+        <div class="shape shape-star"><i class="ph-fill ph-star"></i></div>
+        <div class="shape shape-cylinder"></div>
+
+        <div class="container">
+            <div class="hero-image">
+                <!-- Placeholder for your photo -->
+                <img src="image/profile_pixel.png" alt="Profile Portrait">
+            </div>
+
+            <div class="hero-content">
+                <h2>Hi, I'm Tsalist Agna or Nana!</h2>
+                <h1>Product Design<br>& Development</h1>
+                <p>I craft beautiful user interfaces, code a bit of web & mobile apps, and create content for campaign.</p>
+                
+                <a href="#contact" class="cta-button">Let's Work Together!</a>
+
+                <!-- <div class="clients-row">
+                    <div class="avatars">
+                        <div class="avatar"><img src="https://picsum.photos/seed/u1/100/100" alt="Client"></div>
+                        <div class="avatar"><img src="https://picsum.photos/seed/u2/100/100" alt="Client"></div>
+                        <div class="avatar"><img src="https://picsum.photos/seed/u3/100/100" alt="Client"></div>
+                        <div class="avatar"><img src="https://picsum.photos/seed/u4/100/100" alt="Client"></div>
+                    </div>
+                    <div class="clients-text">80+ Happy Clients</div>
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- My Stack Section -->
+    <section id="stack">
+        <div class="container">
+            <h2 class="section-title">My Stack</h2>
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="ph-fill ph-figma-logo"></i></div>
+                    <div class="stack-name">Figma & Sketch</div>
+                    <div class="stack-hint">Design & Prototyping</div>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="ph-fill ph-code"></i></div>
+                    <div class="stack-name">Front-End</div>
+                    <div class="stack-hint">Web Development</div>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="ph-fill ph-device-mobile"></i></div>
+                    <div class="stack-name">Flutter & SwiftUI</div>
+                    <div class="stack-hint">Mobile Apps</div>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-icon"><i class="ph-fill ph-film-strip"></i></div>
+                    <div class="stack-name">Canva & CapCut</div>
+                    <div class="stack-hint">Campaign Content</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-container">
+                <div class="service-row">
+                    <div class="service-title">UI/UX Design</div>
+                    <div class="service-desc">Designing intuitive mobile and web interfaces with user-centered experiences using Figma.</div>
+                    <div class="service-arrow"><i class="ph-bold ph-arrow-right"></i></div>
+                </div>
+
+                <div class="service-row">
+                    <div class="service-title">Web Development</div>
+                    <div class="service-desc">Building responsive websites with HTML, CSS, JavaScript, WordPress, and modern frontend tools.</div>
+                    <div class="service-arrow"><i class="ph-bold ph-arrow-right"></i></div>
+                </div>
+
+                <div class="service-row">
+                    <div class="service-title">Graphic & Content Design</div>
+                    <div class="service-desc">Creating engaging social media posts, digital branding assets, and visual content for campaigns.</div>
+                    <div class="service-arrow"><i class="ph-bold ph-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+    <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="projects-grid">
+            
+            <a href="detail_elora.html" class="project-card card-light">
+                <!-- 3. Add the Image Here -->
+                <img src="image/banner/banner_elora.png" alt="Lodge Campaign" class="project-preview">
+                <br>
+                <div>
+                    <div class="project-label">Branding • Social Media Design & Planner</div>
+                    <h3 class="project-title">Elora Organizer</h3>
+                    <p class="project-desc">The project is to design a luxury wedding organizer social media campaign focused on elegant branding, emotional storytelling, and 
+                        premium visual consistency.</p>
+                </div>
+                <div class="project-meta">
+                    View Project <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            <a href="detail_seaside.html" class="project-card card-light">
+                <!-- 3. Add the Image Here -->
+                <img src="image/banner/banner_seaside.png" alt="Lodge Campaign" class="project-preview">
+                <br>
+                <div>
+                    <div class="project-label">Branding • Social Media Design</div>
+                    <h3 class="project-title">Seaside Lodge</h3>
+                    <p class="project-desc">The project focuses on building a calm, luxurious, and nature-inspired digital presence.</p>
+                </div>
+                <div class="project-meta">
+                    View Project <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            
+            <!-- Dark Card Project -->
+            <a href="detail_solara.html" class="project-card card-light">
+                <!-- 1. Add the Image Here -->
+                <img src="image/banner/solara_banner.png" alt="Solara App Preview" class="project-preview">
+                <br>
+                <div>
+                    <div class="project-label">UI/UX Designer • SwiftUI Developer</div>
+                    <h3 class="project-title">Solara</h3>
+                    <p class="project-desc">Solara is a UV index monitoring and sunscreen reminder application built using SwiftUI.</p>
+                </div>
+                <div class="project-meta">
+                    View Project <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            
+
+            <!-- Light Card Project -->
+            <a href="detail_lyzmid.html" class="project-card card-light">
+                <!-- 2. Add the Image Here -->
+                <img src="image/banner/banner_lyzmid.png" alt="LYZMID Website" class="project-preview">
+                <br>
+                <div>
+                    <div class="project-label">WordPress • UI/UX Designer</div>
+                    <h3 class="project-title">LYZMID</h3>
+                    <p class="project-desc">A multilingual personality analysis website designed to help users 
+                        explore their personality traits through interactive tests.</p>
+                </div>
+                <div class="project-meta">
+                    View Project <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            <!-- Extra Card for Video Work -->
+            <a href="detail_icecream.html" class="project-card card-light">
+                <!-- 3. Add the Image Here -->
+                <img src="image/banner/banner_eskrim.png" alt="Ice Cream Ad" class="project-preview">
+                <br>
+                <div>
+                    <div class="project-label">Branding • Social Media Design</div>
+                    <h3 class="project-title">Ice Cream Product</h3>
+                    <p class="project-desc">A playful and visually engaging Instagram campaign concept 
+                        for an ice cream brand.</p>
+                </div>
+                <div class="project-meta">
+                    View Project <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            
+
+             <!-- Extra Card for Coding -->
+             <a href="detail_eloka.html" class="project-card card-light">
+                <!-- 4. Add the Image Here -->
+                <img src="image/banner/banner_eloka.png" alt="Eloka" class="project-preview">
+                <br>
+
+                <div>
+                    <div class="project-label">UI/UX Designer</div>
+                    <h3 class="project-title">Eloka</h3>
+                    <p class="project-desc">An eco-friendly tourism mobile app concept designed to promote 
+                        sustainable travel experiences</p>
+                </div>
+                <div class="project-meta">
+                    View Project <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            
+            <a href="detail_fruggiesTales.html" class="project-card card-light">
+                <!-- 4. Add the Image Here -->
+                <img src="image/banner/banner-frugiestale.png" alt="Fruggies Tales" class="project-preview">
+                <br>
+
+                <div>
+                    <div class="project-label">UI/UX Designer</div>
+                    <h3 class="project-title">Fruggies Tales</h3>
+                    <p class="project-desc">An interactive storytelling and Augmented Reality application 
+                    designed to encourage children to love vegetables and fruits.</p>
+                </div>
+                <div class="project-meta">
+                    View Project <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact / Footer CTA -->
+    <section id="contact" style="background-color: #111; color: white; border-radius: 40px; margin-bottom: 60px;">
+        <div class="container" style="text-align: center; padding: 60px 20px;">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Have an idea?</h2>
+            <p style="color: #999; margin-bottom: 40px; font-size: 1.2rem;">Let's build something amazing together.</p>
+            
+            <!-- Main CTA Button -->
+            <a href="mailto:tsalistagna29@gmail.com" class="cta-button" style="background-color: var(--primary);">Get in Touch</a>
+
+            <br>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/baiq-annisa-tsalist-agna/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <i class="ph-fill ph-linkedin-logo"></i>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/na.spaceee" target="_blank" class="social-icon" aria-label="Instagram">
+                    <i class="ph-fill ph-instagram-logo"></i>
+                </a>
+                
+                <!-- Dribbble -->
+                <a href="https://dribbble.com/tsalistagna" target="_blank" class="social-icon" aria-label="Dribbble">
+                    <i class="ph-fill ph-dribbble-logo"></i>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/TsalistAgna" target="_blank" class="social-icon" aria-label="GitHub">
+                    <i class="ph-fill ph-github-logo"></i>
+                </a>
+                
+                <!-- Gmail (Direct Email) -->
+                <a href="mailto:tsalistagna29@gmail.com" class="social-icon" aria-label="Email">
+                    <i class="ph-fill ph-envelope-simple"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decorative Badge -->
+    <div class="made-in">Made by Tsalist Agna</div>
+
+</body>
+</html>
