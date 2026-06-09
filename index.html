@@ -256,6 +256,18 @@
             color: var(--text-main);
         }
 
+        .project-category {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 60px;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .project-category:first-of-type {
+            margin-top: 0;
+        }
+
         /* --- SECTIONS GENERAL --- */
         section {
             padding: 80px 0;
@@ -319,6 +331,44 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
+        }
+
+        /* ===== PROJECT FILTER ===== */
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--text-main);
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .project-item.hide {
+            display: none;
         }
 
         .project-card {
@@ -570,124 +620,193 @@
 
     <!-- Projects Section -->
     <section id="projects">
-    <div class="container">
-        <h2 class="section-title">Selected Projects</h2>
-        <div class="projects-grid">
-            
-            <a href="detail_elora.html" class="project-card card-light">
-                <!-- 3. Add the Image Here -->
-                <img src="image/banner/banner_elora.png" alt="Lodge Campaign" class="project-preview">
-                <br>
-                <div>
-                    <div class="project-label">Branding • Social Media Design & Planner</div>
-                    <h3 class="project-title">Elora Organizer</h3>
-                    <p class="project-desc">The project is to design a luxury wedding organizer social media campaign focused on elegant branding, emotional storytelling, and 
-                        premium visual consistency.</p>
-                </div>
-                <div class="project-meta">
-                    View Project <i class="ph-bold ph-arrow-up-right"></i>
-                </div>
-            </a>
+        <div class="container">
 
-            <a href="detail_seaside.html" class="project-card card-light">
-                <!-- 3. Add the Image Here -->
-                <img src="image/banner/banner_seaside.png" alt="Lodge Campaign" class="project-preview">
-                <br>
-                <div>
-                    <div class="project-label">Branding • Social Media Design</div>
-                    <h3 class="project-title">Seaside Lodge</h3>
-                    <p class="project-desc">The project focuses on building a calm, luxurious, and nature-inspired digital presence.</p>
-                </div>
-                <div class="project-meta">
-                    View Project <i class="ph-bold ph-arrow-up-right"></i>
-                </div>
-            </a>
+            <h2 class="section-title">Selected Projects</h2>
 
-            
-            <!-- Dark Card Project -->
-            <a href="detail_solara.html" class="project-card card-light">
-                <!-- 1. Add the Image Here -->
-                <img src="image/banner/solara_banner.png" alt="Solara App Preview" class="project-preview">
-                <br>
-                <div>
-                    <div class="project-label">UI/UX Designer • SwiftUI Developer</div>
-                    <h3 class="project-title">Solara</h3>
-                    <p class="project-desc">Solara is a UV index monitoring and sunscreen reminder application built using SwiftUI.</p>
-                </div>
-                <div class="project-meta">
-                    View Project <i class="ph-bold ph-arrow-up-right"></i>
-                </div>
-            </a>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="uiux">UI/UX & Development</button>
+                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+            </div>
 
-            
+            <div class="projects-grid">
 
-            <!-- Light Card Project -->
-            <a href="detail_lyzmid.html" class="project-card card-light">
-                <!-- 2. Add the Image Here -->
-                <img src="image/banner/banner_lyzmid.png" alt="LYZMID Website" class="project-preview">
-                <br>
-                <div>
-                    <div class="project-label">WordPress • UI/UX Designer</div>
-                    <h3 class="project-title">LYZMID</h3>
-                    <p class="project-desc">A multilingual personality analysis website designed to help users 
-                        explore their personality traits through interactive tests.</p>
-                </div>
-                <div class="project-meta">
-                    View Project <i class="ph-bold ph-arrow-up-right"></i>
-                </div>
-            </a>
+                <!-- UI/UX -->
 
-            <!-- Extra Card for Video Work -->
-            <a href="detail_icecream.html" class="project-card card-light">
-                <!-- 3. Add the Image Here -->
-                <img src="image/banner/banner_eskrim.png" alt="Ice Cream Ad" class="project-preview">
-                <br>
-                <div>
-                    <div class="project-label">Branding • Social Media Design</div>
-                    <h3 class="project-title">Ice Cream Product</h3>
-                    <p class="project-desc">A playful and visually engaging Instagram campaign concept 
-                        for an ice cream brand.</p>
-                </div>
-                <div class="project-meta">
-                    View Project <i class="ph-bold ph-arrow-up-right"></i>
-                </div>
-            </a>
+                <a href="detail_solara.html"
+                class="project-card card-light project-item"
+                data-category="uiux">
 
-            
+                    <img src="image/banner/solara_banner.png"
+                        alt="Solara"
+                        class="project-preview">
+                    <br>
 
-             <!-- Extra Card for Coding -->
-             <a href="detail_eloka.html" class="project-card card-light">
-                <!-- 4. Add the Image Here -->
-                <img src="image/banner/banner_eloka.png" alt="Eloka" class="project-preview">
-                <br>
+                    <div>
+                        <div class="project-label">UI/UX Designer • SwiftUI Developer</div>
+                        <h3 class="project-title">Solara</h3>
+                        <p class="project-desc">
+                            Solara is a UV index monitoring and sunscreen reminder application built using SwiftUI.
+                        </p>
+                    </div>
 
-                <div>
-                    <div class="project-label">UI/UX Designer</div>
-                    <h3 class="project-title">Eloka</h3>
-                    <p class="project-desc">An eco-friendly tourism mobile app concept designed to promote 
-                        sustainable travel experiences</p>
-                </div>
-                <div class="project-meta">
-                    View Project <i class="ph-bold ph-arrow-up-right"></i>
-                </div>
-            </a>
+                    <div class="project-meta">
+                        View Project <i class="ph-bold ph-arrow-up-right"></i>
+                    </div>
+                </a>
 
-            
-            <a href="detail_fruggiesTales.html" class="project-card card-light">
-                <!-- 4. Add the Image Here -->
-                <img src="image/banner/banner-frugiestale.png" alt="Fruggies Tales" class="project-preview">
-                <br>
+                <a href="detail_lyzmid.html"
+                class="project-card card-light project-item"
+                data-category="uiux">
 
-                <div>
-                    <div class="project-label">UI/UX Designer</div>
-                    <h3 class="project-title">Fruggies Tales</h3>
-                    <p class="project-desc">An interactive storytelling and Augmented Reality application 
-                    designed to encourage children to love vegetables and fruits.</p>
-                </div>
-                <div class="project-meta">
-                    View Project <i class="ph-bold ph-arrow-up-right"></i>
-                </div>
-            </a>
+                    <img src="image/banner/banner_lyzmid.png"
+                        alt="LYZMID"
+                        class="project-preview">
+                    <br>
+
+                    <div>
+                        <div class="project-label">WordPress • UI/UX Designer</div>
+                        <h3 class="project-title">LYZMID</h3>
+                        <p class="project-desc">
+                            A multilingual personality analysis website.
+                        </p>
+                    </div>
+
+                    <div class="project-meta">
+                        View Project <i class="ph-bold ph-arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <a href="detail_eloka.html"
+                class="project-card card-light project-item"
+                data-category="uiux">
+
+                    <img src="image/banner/banner_eloka.png"
+                        alt="Eloka"
+                        class="project-preview">
+                    <br>
+
+                    <div>
+                        <div class="project-label">UI/UX Designer</div>
+                        <h3 class="project-title">Eloka</h3>
+                        <p class="project-desc">
+                            Eco-friendly tourism mobile app concept.
+                        </p>
+                    </div>
+
+                    <div class="project-meta">
+                        View Project <i class="ph-bold ph-arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <a href="detail_fruggiesTales.html"
+                class="project-card card-light project-item"
+                data-category="uiux">
+
+                    <img src="image/banner/banner-frugiestale.png"
+                        alt="Fruggies Tales"
+                        class="project-preview">
+                    <br>
+
+                    <div>
+                        <div class="project-label">UI/UX Designer</div>
+                        <h3 class="project-title">Fruggies Tales</h3>
+                        <p class="project-desc">
+                            Interactive storytelling and AR application.
+                        </p>
+                    </div>
+
+                    <div class="project-meta">
+                        View Project <i class="ph-bold ph-arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <!-- GRAPHIC -->
+
+                <a href="detail_elora.html"
+                class="project-card card-light project-item"
+                data-category="graphic">
+
+                    <img src="image/banner/banner_elora.png"
+                        alt="Elora"
+                        class="project-preview">
+                    <br>
+
+                    <div>
+                        <div class="project-label">
+                            Branding • Social Media Design
+                        </div>
+
+                        <h3 class="project-title">
+                            Elora Organizer
+                        </h3>
+
+                        <p class="project-desc">
+                            Luxury wedding organizer branding campaign.
+                        </p>
+                    </div>
+
+                    <div class="project-meta">
+                        View Project <i class="ph-bold ph-arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <a href="detail_seaside.html"
+                class="project-card card-light project-item"
+                data-category="graphic">
+
+                    <img src="image/banner/banner_seaside.png"
+                        alt="Seaside"
+                        class="project-preview">
+                    <br>
+
+                    <div>
+                        <div class="project-label">
+                            Branding • Social Media Design
+                        </div>
+
+                        <h3 class="project-title">
+                            Seaside Lodge
+                        </h3>
+
+                        <p class="project-desc">
+                            Luxury nature-inspired branding concept.
+                        </p>
+                    </div>
+
+                    <div class="project-meta">
+                        View Project <i class="ph-bold ph-arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <a href="detail_icecream.html"
+                class="project-card card-light project-item"
+                data-category="graphic">
+
+                    <img src="image/banner/banner_eskrim.png"
+                        alt="Ice Cream"
+                        class="project-preview">
+                    <br>
+
+                    <div>
+                        <div class="project-label">
+                            Branding • Social Media Design
+                        </div>
+
+                        <h3 class="project-title">
+                            Ice Cream Product
+                        </h3>
+
+                        <p class="project-desc">
+                            Instagram campaign concept for ice cream brand.
+                        </p>
+                    </div>
+
+                    <div class="project-meta">
+                        View Project <i class="ph-bold ph-arrow-up-right"></i>
+                    </div>
+                </a>
 
             </div>
         </div>
@@ -737,5 +856,35 @@
     <!-- Decorative Badge -->
     <div class="made-in">Made by Tsalist Agna</div>
 
+    <script>
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const projects = document.querySelectorAll(".project-item");
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+
+                filterButtons.forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+                button.classList.add("active");
+
+                const filter = button.dataset.filter;
+
+                projects.forEach(project => {
+
+                    if (
+                        filter === "all" ||
+                        project.dataset.category === filter
+                    ) {
+                        project.classList.remove("hide");
+                    } else {
+                        project.classList.add("hide");
+                    }
+
+                });
+            });
+        });
+        </script>
 </body>
 </html>
