@@ -1,0 +1,83 @@
+<h1>B-Side</h1>
+
+<div class="hero-showcase">
+  <img src="image/bside/bside-banner.png" alt="B-Side app screens showing onboarding, Today's Track Finding, and a collection of saved screenshots">
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">Project Overview</h2>
+  <p>B-Side is an iOS app for organizing screenshots around the reason they were saved. It uses on-device AI to understand the screenshot, suggest useful context, and help people find it again later.</p>
+  <p>In the app's music-inspired language, one screenshot is a <strong>Track</strong> and a collection of related Tracks is a <strong>B-Side</strong>. The experience goes beyond putting images in folders: it helps turn a pile of screenshots into things you can remember and use.</p>
+  <p>This was a solo project. I developed the product idea, researched and defined the problem, designed the experience, managed my work with a Kanban board, and coded the iOS app.</p>
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">The Problem</h2>
+  <div class="problem-box">
+    <h3>Saved for later, then lost in the camera roll</h3>
+    <p>A screenshot can be a place to visit, a product to buy, design inspiration, or something to read. Once these different intentions are mixed in the photo library, the screenshot may still be there, but its purpose is easy to forget.</p>
+  </div>
+  <p>The question behind B-Side was: how could an app understand <em>why</em> someone saved a screenshot, organize it with less manual effort, and make rediscovery feel useful rather than random clutter?</p>
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">From Idea to Scope</h2>
+  <p>I approached the project as both a product and a build: clarify the problem, decide on the core experience, design the flows, then implement them in SwiftUI. I tracked and prioritized that work in a Kanban board as the sole person on the project.</p>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="step-header"><span class="step-number">1</span><h3 class="step-title">Research &amp; framing</h3></div>
+      <p class="step-desc">I explored the friction of saving many screenshots but struggling to recall what they were for. The product focus became the screenshot's intent and context, not only its visual contents.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-header"><span class="step-number">2</span><h3 class="step-title">Core flow</h3></div>
+      <p class="step-desc">The flow connects importing a screenshot, understanding it, placing it with related Tracks, and rediscovering it when it might matter again.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-header"><span class="step-number">3</span><h3 class="step-title">Interface design</h3></div>
+      <p class="step-desc">I mapped the onboarding, home, collections, and Track detail before refining the visual hierarchy and the music-inspired system of Tracks and B-Sides.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-header"><span class="step-number">4</span><h3 class="step-title">iOS development</h3></div>
+      <p class="step-desc">I built with SwiftUI, worked with photo-library access, and explored Apple Foundation Models for understanding screenshot images and producing short, useful context.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">Low-Fidelity Exploration</h2>
+  <p>The early layouts map the main journey: onboarding, a daily finding, collections, a collection detail, and a Track detail. They helped me work through the structure before styling individual screens.</p>
+  <figure class="case-visual">
+    <img src="image/bside/bside-lofi.png" alt="B-Side low-fidelity screens for onboarding, home, collections, track detail, search, and settings">
+    <figcaption>Early screen exploration. <a href="/image/bside/bside-lofi.png">View the full-size image ↗</a></figcaption>
+  </figure>
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">Interface Direction</h2>
+  <p>The refined screens use a light background, blue actions, vinyl-like collection graphics, and a clear hierarchy between Today's Finding, recent Tracks, and collections. A collection can be created from a sheet, keeping the person close to the content they were viewing.</p>
+  <figure class="case-visual">
+    <img src="image/bside/bside-hifi.png" alt="B-Side high-fidelity screens showing onboarding, home, B-Side collections, add collection sheet, and Track detail">
+    <figcaption>Refined screens for organizing and rediscovering screenshots. <a href="/image/bside/bside-hifi.png">View the full-size image ↗</a></figcaption>
+  </figure>
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">Product Decisions</h2>
+  <ul>
+    <li><strong>Organize by intent:</strong> Instead of treating every screenshot as another image file, B-Side considers whether it was saved as inspiration, a place, a purchase, or something else useful.</li>
+    <li><strong>Make AI output understandable:</strong> A short title, category, tags, and rediscovery message give each Track a reason to be found again.</li>
+    <li><strong>Keep people in control:</strong> The design includes editable Track information and collection choices, so AI suggestions are a starting point rather than the final word.</li>
+    <li><strong>Bring saved things back:</strong> Today's Finding resurfaces a previously processed Track to reconnect the person with something they might otherwise forget.</li>
+    <li><strong>Keep screenshot analysis private:</strong> The concept uses on-device AI for personal images.</li>
+  </ul>
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">My Role</h2>
+  <p>Solo product idea, research, UI/UX design, Kanban planning, and iOS development. Working across those parts let me make design decisions while accounting for what I could build within the project.</p>
+</div>
+
+<div class="section-block">
+  <h2 class="section-title">Tools &amp; Technologies</h2>
+  <div class="tech-list"><span class="tech-tag">SwiftUI</span><span class="tech-tag">Photos</span><span class="tech-tag">Apple Foundation Models</span><span class="tech-tag">Kanban</span></div>
+</div>

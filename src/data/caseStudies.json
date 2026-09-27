@@ -1,0 +1,473 @@
+{
+  "bside": {
+    "title": "B-Side",
+    "metadata": [
+      {
+        "label": "Team",
+        "value": "Solo project",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Role",
+        "value": "Product Designer, Project Manager & iOS Developer",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Contribution",
+        "value": "Developed the idea, researched the problem, designed the product, managed a Kanban board, and coded the iOS app.",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Tools & Technologies",
+        "value": "",
+        "tags": [
+          "SwiftUI",
+          "Photos",
+          "Apple Foundation Models",
+          "Kanban"
+        ],
+        "links": []
+      }
+    ],
+    "related": [
+      {
+        "slug": "rawrndry",
+        "title": "Rawrndry",
+        "description": "A prehistoric laundry simulation game built around satisfying, hands-on interactions.",
+        "tags": [
+          "Game UI/UX • Project Management"
+        ]
+      },
+      {
+        "slug": "kiddly",
+        "title": "Kiddly",
+        "description": "Parental companion application that helps parents understand children's digital consumption.",
+        "tags": [
+          "Product Design • UI/UX"
+        ]
+      },
+      {
+        "slug": "lyzmid",
+        "title": "LYZMID",
+        "description": "A multilingual personality analysis platform built with WordPress.",
+        "tags": [
+          "WordPress • UI/UX"
+        ]
+      }
+    ]
+  },
+  "rawrndry": {
+    "title": "Rawrndry",
+    "metadata": [
+      {
+        "label": "Team",
+        "value": "5 Members",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Role",
+        "value": "UI/UX Designer & Project Manager",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Project",
+        "value": "Casual simulation game",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Focus",
+        "value": "Hands-on laundry interactions, visible progress, and playful guidance",
+        "tags": [],
+        "links": []
+      }
+    ],
+    "related": [
+      {
+        "slug": "kiddly",
+        "title": "Kiddly",
+        "description": "Parental companion application that helps parents understand children's digital consumption.",
+        "tags": [
+          "Product Design • UI/UX"
+        ]
+      },
+      {
+        "slug": "lyzmid",
+        "title": "LYZMID",
+        "description": "A multilingual personality analysis platform built with WordPress.",
+        "tags": [
+          "WordPress • UI/UX"
+        ]
+      },
+      {
+        "slug": "eloka",
+        "title": "Eloka",
+        "description": "Eco-tourism application encouraging sustainable travel experiences.",
+        "tags": [
+          "Mobile App • UI/UX"
+        ]
+      }
+    ]
+  },
+  "kiddly": {
+    "title": "Kiddly",
+    "metadata": [
+      {
+        "label": "Duration",
+        "value": "2 Months",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Team",
+        "value": "6 People",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Role",
+        "value": "Product Designer & UI/UX Designer",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Contribution",
+        "value": "Contributed to the end-to-end product design process including ideation, user research, user interview, feature planning product strategy, wireframing, low-fidelity, interface design, prototyping, and usability validation for a parental companion application.",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Tech Stack",
+        "value": "",
+        "tags": [
+          "Sketch",
+          "Miro",
+          "Figma",
+          "UI/UX Design",
+          "User Research",
+          "Design Thinking"
+        ],
+        "links": []
+      }
+    ],
+    "related": [
+      {
+        "slug": "lyzmid",
+        "title": "LYZMID",
+        "description": "A multilingual personality analysis platform built with WordPress.",
+        "tags": [
+          "WordPress • UI/UX"
+        ]
+      },
+      {
+        "slug": "eloka",
+        "title": "Eloka",
+        "description": "Eco-tourism application encouraging sustainable travel experiences.",
+        "tags": [
+          "Mobile App • UI/UX"
+        ]
+      },
+      {
+        "slug": "fruggiestales",
+        "title": "Fruggies Tales",
+        "description": "Interactive storytelling application integrated with augmented reality.",
+        "tags": [
+          "AR • Storytelling"
+        ]
+      }
+    ],
+    "source": "detail_kiddly(1).html"
+  },
+  "lyzmid": {
+    "title": "LYZMID",
+    "metadata": [
+      {
+        "label": "Duration",
+        "value": "6 Months",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Team",
+        "value": "Group Project",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Role",
+        "value": "UI/UX Designer WordPress Developer",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Contribution",
+        "value": "Designed the multilingual interface system, improved user flows, developed pages using WordPress, and conducted usability evaluation using UEQ and VISAWI to support the redesign process.",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Tech Stack",
+        "value": "",
+        "tags": [
+          "Figma",
+          "WordPress",
+          "Elementor",
+          "UEQ",
+          "VISAWI",
+          "User-Centered Design"
+        ],
+        "links": []
+      },
+      {
+        "label": "Links",
+        "value": "",
+        "tags": [],
+        "links": [
+          {
+            "label": "Visit Website",
+            "href": "https://analyze.my.id/"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "slug": "eloka",
+        "title": "Eloka",
+        "description": "Eco-tourism application encouraging sustainable travel experiences.",
+        "tags": [
+          "Mobile App • UI/UX"
+        ]
+      },
+      {
+        "slug": "fruggiestales",
+        "title": "Fruggies Tales",
+        "description": "Interactive storytelling application integrated with augmented reality.",
+        "tags": [
+          "AR • Storytelling"
+        ]
+      },
+      {
+        "slug": "dentalclinic",
+        "title": "Digi Dental Clinic",
+        "description": "Modern dental clinic website with online appointment booking.",
+        "tags": [
+          "UI/UX Design • Healthcare Website"
+        ]
+      }
+    ],
+    "source": "detail_lyzmid(1).html"
+  },
+  "eloka": {
+    "title": "Eloka",
+    "metadata": [
+      {
+        "label": "Duration",
+        "value": "2 Months",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Role",
+        "value": "UI/UX Designer",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Contribution",
+        "value": "Designed the end-to-end mobile app experience, including user research, user flow, wireframing, and high-fidelity interface design focused on sustainable tourism and eco-friendly travel experiences.",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Tech Stack",
+        "value": "",
+        "tags": [
+          "Figma",
+          "UI Design",
+          "User Research",
+          "Design Thinking"
+        ],
+        "links": []
+      },
+      {
+        "label": "Links",
+        "value": "",
+        "tags": [],
+        "links": [
+          {
+            "label": "View Design",
+            "href": "https://dribbble.com/shots/26472699-Eloka-Travel-while-supporting-sustainability"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "slug": "fruggiestales",
+        "title": "Fruggies Tales",
+        "description": "Interactive storytelling application integrated with augmented reality.",
+        "tags": [
+          "AR • Storytelling"
+        ]
+      },
+      {
+        "slug": "dentalclinic",
+        "title": "Digi Dental Clinic",
+        "description": "Modern dental clinic website with online appointment booking.",
+        "tags": [
+          "UI/UX Design • Healthcare Website"
+        ]
+      },
+      {
+        "slug": "bside",
+        "title": "B-Side",
+        "description": "An iOS app that organizes screenshots by why they were saved and helps people rediscover them.",
+        "tags": [
+          "Product Design • iOS Development"
+        ]
+      }
+    ],
+    "source": "detail_eloka(1).html"
+  },
+  "fruggiestales": {
+    "title": "Fruggies Tales",
+    "metadata": [
+      {
+        "label": "Duration",
+        "value": "3 Months",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Role",
+        "value": "UI/UX Designer",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Tech Stack",
+        "value": "",
+        "tags": [
+          "Figma",
+          "Canva",
+          "Design Thinking",
+          "SCRUM"
+        ],
+        "links": []
+      },
+      {
+        "label": "Links",
+        "value": "",
+        "tags": [],
+        "links": []
+      }
+    ],
+    "related": [
+      {
+        "slug": "dentalclinic",
+        "title": "Digi Dental Clinic",
+        "description": "Modern dental clinic website with online appointment booking.",
+        "tags": [
+          "UI/UX Design • Healthcare Website"
+        ]
+      },
+      {
+        "slug": "bside",
+        "title": "B-Side",
+        "description": "An iOS app that organizes screenshots by why they were saved and helps people rediscover them.",
+        "tags": [
+          "Product Design • iOS Development"
+        ]
+      },
+      {
+        "slug": "rawrndry",
+        "title": "Rawrndry",
+        "description": "A prehistoric laundry simulation game built around satisfying, hands-on interactions.",
+        "tags": [
+          "Game UI/UX • Project Management"
+        ]
+      }
+    ],
+    "source": "detail_fruggiesTales(1).html"
+  },
+  "dentalclinic": {
+    "title": "Digi Dental Clinic Website Design",
+    "metadata": [
+      {
+        "label": "Duration",
+        "value": "3 Days",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Project Type",
+        "value": "UI/UX Case Study",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Role",
+        "value": "UI/UX Designer",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Contribution",
+        "value": "Conducted research, designed user flows and wireframes, developed the visual interface, and created a responsive website experience for a modern dental clinic that simplifies information access and appointment booking.",
+        "tags": [],
+        "links": []
+      },
+      {
+        "label": "Tools Used",
+        "value": "",
+        "tags": [
+          "Figma"
+        ],
+        "links": []
+      },
+      {
+        "label": "Category",
+        "value": "",
+        "tags": [
+          "UI/UX Design",
+          "Healthcare",
+          "Responsive Website"
+        ],
+        "links": []
+      }
+    ],
+    "related": [
+      {
+        "slug": "bside",
+        "title": "B-Side",
+        "description": "An iOS app that organizes screenshots by why they were saved and helps people rediscover them.",
+        "tags": [
+          "Product Design • iOS Development"
+        ]
+      },
+      {
+        "slug": "rawrndry",
+        "title": "Rawrndry",
+        "description": "A prehistoric laundry simulation game built around satisfying, hands-on interactions.",
+        "tags": [
+          "Game UI/UX • Project Management"
+        ]
+      },
+      {
+        "slug": "kiddly",
+        "title": "Kiddly",
+        "description": "Parental companion application that helps parents understand children's digital consumption.",
+        "tags": [
+          "Product Design • UI/UX"
+        ]
+      }
+    ],
+    "source": "detail_dentalclinic(1).html"
+  }
+}
